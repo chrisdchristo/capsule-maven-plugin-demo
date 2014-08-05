@@ -19,3 +19,7 @@ and then run:
 ```
 java -jar target/capsule-maven-plugin-demo-0.1-capsule-full.jar
 ```
+
+## License
+
+This project is released under the [MIT license](http://opensource.org/licenses/MIT).
