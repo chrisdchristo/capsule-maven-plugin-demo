@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.github.christokios</groupId>
+	<artifactId>capsule-maven-plugin-demo</artifactId>
+	<version>0.1</version>
+	<packaging>jar</packaging>
+
+	<developers>
+		<developer>
+			<name>Chris Christo</name>
+			<email>_c.c@mail.com</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<url>https://github.com/christokios/capsule-maven-plugin-demo</url>
+		<connection>scm:git:https://github.com/christokios/capsule-maven-plugin-demo.git</connection>
+		<developerConnection>scm:git:https://github.com/christokios/capsule-maven-plugin-demo.git</developerConnection>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
+		<maven.source.plugin.version>2.3</maven.source.plugin.version>
+		<capsule.maven.plugin.version>0.1-SNAPSHOT</capsule.maven.plugin.version>
+		<!-- Specify a custom capsule version -->
+		<!--<capsule.version>0.5.0</capsule.version>-->
+	</properties>
+
+	<dependencies>
+
+		<!-- INCLUDED DEPENDENCY (Only compile+runtime scopes will be added to capsule)-->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>17.0</version>
+		</dependency>
+
+		<!-- EXCLUDED DEPENDENCY (excluded from capsule because its test scope) -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<!-- COMPILER -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+
+			<!-- SOURCES JAR -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven.source.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- BUILD CAPSULES -->
+			<plugin>
+				<groupId>com.github.christokios</groupId>
+				<artifactId>capsule-maven-plugin</artifactId>
+				<version>${capsule.maven.plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>capsule</goal>
+						</goals>
+						<configuration>
+							<!--<target></target>-->
+							<!--<finalName></finalName>-->
+							<mainClass>hello.HelloWorld</mainClass>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
