@@ -4,7 +4,7 @@
 
 	<groupId>com.github.christokios</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>0.1</version>
+	<version>0.2</version>
 	<packaging>jar</packaging>
 
 	<developers>
@@ -25,9 +25,9 @@
 		<java.version>1.8</java.version>
 		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
 		<maven.source.plugin.version>2.3</maven.source.plugin.version>
-		<capsule.maven.plugin.version>0.1-SNAPSHOT</capsule.maven.plugin.version>
+		<capsule.maven.plugin.version>0.2</capsule.maven.plugin.version>
 		<!-- Specify a custom capsule version -->
-		<!--<capsule.version>0.5.0</capsule.version>-->
+		<capsule.version>0.5.0</capsule.version>
 	</properties>
 
 	<dependencies>
@@ -90,9 +90,23 @@
 							<goal>capsule</goal>
 						</goals>
 						<configuration>
-							<!--<target></target>-->
-							<!--<finalName></finalName>-->
+
+							<!-- REQUIRED -->
 							<mainClass>hello.HelloWorld</mainClass>
+
+							<!-- OPTIONAL -->
+							<!--<target>otherOutputDirectory/</target>-->
+							<!--<finalName>otherFinalName</finalName>-->
+							<!--<minJavaVersion>1.8.0</minJavaVersion>-->
+							<!--<extractCapsule>true</extractCapsule>-->
+							<!--<jvmArgs>-Xmx512m</jvmArgs>-->
+							<properties> <!-- system properties for your app -->
+								<property>
+									<name>propertyName1</name>
+									<value>propertyValue1</value>
+								</property>
+							</properties>
+
 						</configuration>
 					</execution>
 				</executions>

@@ -14,10 +14,12 @@ cd capsule-maven-plugin
 mvn install
 ```
 
-and then run:
+Then you can run any of the three capsules:
 
 ```
-java -jar target/capsule-maven-plugin-demo-0.1-capsule-full.jar
+java -jar target/capsule-maven-plugin-demo-0.2-capsule-empty.jar
+java -jar target/capsule-maven-plugin-demo-0.2-capsule-thin.jar
+java -jar target/capsule-maven-plugin-demo-0.2-capsule-full.jar
 ```
 
 ## License
