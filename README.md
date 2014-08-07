@@ -17,9 +17,9 @@ mvn install
 Then you can run any of the three capsules:
 
 ```
-java -jar target/capsule-maven-plugin-demo-0.2-capsule-empty.jar
-java -jar target/capsule-maven-plugin-demo-0.2-capsule-thin.jar
-java -jar target/capsule-maven-plugin-demo-0.2-capsule-full.jar
+java -jar target/capsule-maven-plugin-demo-0.3-capsule-empty.jar
+java -jar target/capsule-maven-plugin-demo-0.3-capsule-thin.jar
+java -jar target/capsule-maven-plugin-demo-0.3-capsule-full.jar
 ```
 
 ## License

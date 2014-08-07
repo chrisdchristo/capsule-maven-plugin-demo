@@ -4,7 +4,7 @@
 
 	<groupId>com.github.christokios</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>0.2</version>
+	<version>0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<developers>
@@ -25,9 +25,9 @@
 		<java.version>1.8</java.version>
 		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
 		<maven.source.plugin.version>2.3</maven.source.plugin.version>
-		<capsule.maven.plugin.version>0.2</capsule.maven.plugin.version>
+		<capsule.maven.plugin.version>${project.version}</capsule.maven.plugin.version>
 		<!-- Specify a custom capsule version -->
-		<capsule.version>0.5.0</capsule.version>
+		<capsule.version>0.6.0-SNAPSHOT</capsule.version>
 	</properties>
 
 	<dependencies>
@@ -95,17 +95,23 @@
 							<mainClass>hello.HelloWorld</mainClass>
 
 							<!-- OPTIONAL -->
-							<!--<target>otherOutputDirectory/</target>-->
-							<!--<finalName>otherFinalName</finalName>-->
-							<!--<minJavaVersion>1.8.0</minJavaVersion>-->
-							<!--<extractCapsule>true</extractCapsule>-->
-							<!--<jvmArgs>-Xmx512m</jvmArgs>-->
-							<properties> <!-- system properties for your app -->
+							<!--<outputDir>target/</outputDir>-->
+							<properties>
 								<property>
 									<name>propertyName1</name>
 									<value>propertyValue1</value>
 								</property>
 							</properties>
+							<manifest>
+								<property>
+									<name>JVM-Args</name>
+									<value>-Xmx512m</value>
+								</property>
+								<property>
+									<name>Min-Java-Version</name>
+									<value>1.8.0</value>
+								</property>
+							</manifest>
 
 						</configuration>
 					</execution>
