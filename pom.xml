@@ -4,7 +4,7 @@
 
 	<groupId>com.github.christokios</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>0.3-SNAPSHOT</version>
+	<version>0.6.0</version>
 	<packaging>jar</packaging>
 
 	<developers>
@@ -27,7 +27,7 @@
 		<maven.source.plugin.version>2.3</maven.source.plugin.version>
 		<capsule.maven.plugin.version>${project.version}</capsule.maven.plugin.version>
 		<!-- Specify a custom capsule version -->
-		<capsule.version>0.6.0-SNAPSHOT</capsule.version>
+		<capsule.version>${project.version}</capsule.version>
 	</properties>
 
 	<dependencies>
@@ -37,9 +37,15 @@
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>17.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.code.findbugs</groupId>
+					<artifactId>jsr305</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
-		<!-- EXCLUDED DEPENDENCY (excluded from capsule because its test scope) -->
+		<!-- EXCLUDED DEPENDENCY (excluded from capsule because it is test scope) -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -96,6 +102,7 @@
 
 							<!-- OPTIONAL -->
 							<!--<outputDir>target/</outputDir>-->
+							<buildExec>true</buildExec>
 							<properties>
 								<property>
 									<name>propertyName1</name>

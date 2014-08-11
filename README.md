@@ -11,16 +11,24 @@ Clone the project and run a maven install:
 ```
 git clone https://github.com/christokios/capsule-maven-plugin-demo.git
 cd capsule-maven-plugin
-mvn install
+mvn clean install
 ```
 
 Then you can run any of the three capsules:
 
 ```
-java -jar target/capsule-maven-plugin-demo-0.3-capsule-empty.jar
-java -jar target/capsule-maven-plugin-demo-0.3-capsule-thin.jar
-java -jar target/capsule-maven-plugin-demo-0.3-capsule-full.jar
+java -jar target/capsule-maven-plugin-demo-0.6-capsule-empty.jar
+java -jar target/capsule-maven-plugin-demo-0.6-capsule-thin.jar
+java -jar target/capsule-maven-plugin-demo-0.6-capsule-full.jar
 ```
+
+And if you added the `<buildExec>true</buildExec>` parameter and are on a Mac/Unix system you can run the jars as executables like so:
+  
+```
+./target/capsule-maven-plugin-demo-0.6-capsule-empty.x
+./target/capsule-maven-plugin-demo-0.6-capsule-thin.x
+./target/capsule-maven-plugin-demo-0.6-capsule-full.x
+```  
 
 ## License
 
