@@ -4,7 +4,7 @@
 
 	<groupId>com.github.christokios</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>0.7.0-SNAPSHOT</version>
+	<version>0.7.1</version>
 	<packaging>jar</packaging>
 
 	<developers>
@@ -27,12 +27,12 @@
 		<maven.source.plugin.version>2.3</maven.source.plugin.version>
 		<!-- Specify a custom capsule version -->
 		<capsule.version>${project.version}</capsule.version>
-		<capsule.maven.plugin.version>${capsule.version}</capsule.maven.plugin.version>
+		<capsule.maven.plugin.version>${project.version}</capsule.maven.plugin.version>
 	</properties>
 
 	<dependencies>
 
-		<!-- FOR THE CUSTOM CAPSULE CLASS -->
+		<!-- FOR THE CUSTOM CAPSULE CLASS (Don't need this if using the default Capsule.class) -->
 		<dependency>
 			<groupId>co.paralleluniverse</groupId>
 			<artifactId>capsule</artifactId>
@@ -40,7 +40,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- INCLUDED DEPENDENCY (Only compile+runtime scopes will be added to capsule)-->
+		<!-- INCLUDED DEPENDENCY EXAMPLE (Only compile+runtime scopes will be added to capsule)-->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -53,7 +53,7 @@
 			</exclusions>
 		</dependency>
 
-		<!-- EXCLUDED DEPENDENCY (excluded from capsule because it is test scope) -->
+		<!-- EXCLUDED DEPENDENCY EXAMPLE (excluded from capsule because it is test scope) -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
