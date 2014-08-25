@@ -18,8 +18,8 @@ Then you can run any of the three capsules:
 
 ```
 java -jar target/capsule-maven-plugin-demo-0.7.1-capsule-empty.jar
-java -jar target/capsule-maven-plugin-demo-0.7.0-capsule-thin.jar
-java -jar target/capsule-maven-plugin-demo-0.7.0-capsule-fat.jar
+java -jar target/capsule-maven-plugin-demo-0.7.1-capsule-thin.jar
+java -jar target/capsule-maven-plugin-demo-0.7.1-capsule-fat.jar
 ```
 
 And if you added the `<buildExec>true</buildExec>` parameter and are on a Mac/Unix system you can run the jars as executables like so:
