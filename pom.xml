@@ -33,9 +33,10 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
+		<java.version>1.7</java.version>
 		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
 		<maven.source.plugin.version>2.3</maven.source.plugin.version>
+		<maven.exec.plugin.version>1.3.2</maven.exec.plugin.version>
 		<!-- Specify a custom capsule version -->
 		<capsule.version>0.8.0</capsule.version>
 		<capsule.maven.plugin.version>0.8.0-SNAPSHOT</capsule.maven.plugin.version>
@@ -49,12 +50,6 @@
 			<artifactId>capsule</artifactId>
 			<version>${capsule.version}</version>
 			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>3.3.2.GA</version>
 		</dependency>
 
 		<!-- INCLUDED DEPENDENCY EXAMPLE (Only compile+runtime scopes will be added to capsule)-->
@@ -83,6 +78,67 @@
 	<build>
 		<plugins>
 
+			<!-- EXEC PLUGIN EXAMPLE -->
+			<!--<plugin>-->
+				<!--<groupId>org.codehaus.mojo</groupId>-->
+				<!--<artifactId>exec-maven-plugin</artifactId>-->
+				<!--<version>${maven.exec.plugin.version}</version>-->
+				<!--<configuration>-->
+					<!--<mainClass>hello.HelloWorld</mainClass>-->
+					<!--<systemProperties>-->
+						<!--<property>-->
+							<!--<key>boo</key>-->
+							<!--<value>ya</value>-->
+						<!--</property>-->
+					<!--</systemProperties>-->
+					<!--<arguments>-->
+						<!--<argument>-Xmx512M</argument>-->
+					<!--</arguments>-->
+				<!--</configuration>-->
+			<!--</plugin>-->
+
+			<!-- BUILD CAPSULES EXAMPLE -->
+			<plugin>
+				<groupId>com.github.christokios</groupId>
+				<artifactId>capsule-maven-plugin</artifactId>
+				<version>${capsule.maven.plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+						<configuration>
+
+							<!-- REQUIRED -->
+							<appClass>hello.HelloWorld</appClass>
+
+							<!-- OPTIONAL -->
+							<!--<output>target/</output>-->
+							<chmod>true</chmod>
+							<!--<trampoline>true</trampoline>-->
+							<!--<types>thin fat</types>-->
+							<!--<execPluginConfig>root</execPluginConfig>-->
+
+							<properties>
+								<property>
+									<name>propertyName1</name>
+									<value>propertyValue1</value>
+								</property>
+							</properties>
+
+							<manifest>
+								<entry>
+									<name>JVM-Args</name>
+									<value>-Xmx512m</value>
+								</entry>
+							</manifest>
+
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 			<!-- COMPILER -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -105,50 +161,6 @@
 						<goals>
 							<goal>jar</goal>
 						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<!-- BUILD CAPSULES -->
-			<plugin>
-				<groupId>com.github.christokios</groupId>
-				<artifactId>capsule-maven-plugin</artifactId>
-				<version>${capsule.maven.plugin.version}</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>capsule</goal>
-						</goals>
-						<configuration>
-
-							<!-- REQUIRED -->
-							<appClass>hello.HelloWorld</appClass>
-
-							<!-- OPTIONAL -->
-							<!--<output>target/</output>-->
-							<exec>true</exec>
-							<trampoline>true</trampoline>
-							<!--<types>thin fat</types>-->
-							<properties>
-								<property>
-									<name>propertyName1</name>
-									<value>propertyValue1</value>
-								</property>
-							</properties>
-
-							<manifest>
-								<property>
-									<name>JVM-Args</name>
-									<value>-Xmx512m</value>
-								</property>
-								<property>
-									<name>Min-Java-Version</name>
-									<value>1.8.0</value>
-								</property>
-							</manifest>
-
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>

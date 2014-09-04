@@ -9,7 +9,7 @@ This a demo project of how you can use the [capsule-maven-plugin](https://github
 See more at [capsule](https://github.com/puniverse/capsule) and [capsule-maven-plugin](https://github.com/christokios/capsule-maven-plugin).
 
 #### Building from source
-Clone the project and run a `maven clean install`:
+Clone the project and run a maven install:
 
 ```
 git clone https://github.com/christokios/capsule-maven-plugin-demo.git
@@ -35,7 +35,7 @@ Run `export CAPSULE_REPOS=local,central` to add the `local` and `central` repos 
 </property>
 ```
 
-And if you added the `<exec>true</exec>` parameter and are on a Mac/Unix system you can run the jars as executables like so:
+And if you added the `<chmod>true</chmod>` parameter and are on a Mac/Unix system you can run the jars as executables like so:
 
 ```
 ./target/capsule-maven-plugin-demo-0.8.0-capsule-empty.x
