@@ -91,47 +91,48 @@
 				<groupId>com.github.chrischristo</groupId>
 				<artifactId>capsule-maven-plugin</artifactId>
 				<version>${capsule.maven.plugin.version}</version>
+				<configuration>
+
+					<!-- REQUIRED -->
+					<appClass>hello.HelloWorld</appClass>
+
+					<!-- OPTIONAL -->
+					<!--<output>target</output>-->
+					<chmod>true</chmod>
+					<trampoline>true</trampoline>
+					<!--<types>thin fat</types>-->
+					<!--<execPluginConfig>root</execPluginConfig>-->
+
+					<properties>
+						<property>
+							<key>propertyName1</key>
+							<value>propertyValue1</value>
+						</property>
+					</properties>
+
+					<manifest>
+						<entry>
+							<key>JVM-Args</key>
+							<value>-Xmx512m</value>
+						</entry>
+						<entry>
+							<key>Repositories</key>
+							<value>local central</value>
+						</entry>
+						<!--<entry>-->
+						<!--<key>Main-Class</key>-->
+						<!--<value>MyCapsule</value>-->
+						<!--</entry>-->
+					</manifest>
+
+				</configuration>
+				<!-- BUILD CAPSULES AUTOMATICALLY AT PACKAGE PHASE -->
 				<executions>
 					<execution>
 						<phase>package</phase>
 						<goals>
 							<goal>build</goal>
 						</goals>
-						<configuration>
-
-							<!-- REQUIRED -->
-							<appClass>hello.HelloWorld</appClass>
-
-							<!-- OPTIONAL -->
-							<!--<output>target</output>-->
-							<chmod>true</chmod>
-							<trampoline>true</trampoline>
-							<!--<types>thin fat</types>-->
-							<!--<execPluginConfig>root</execPluginConfig>-->
-
-							<properties>
-								<property>
-									<key>propertyName1</key>
-									<value>propertyValue1</value>
-								</property>
-							</properties>
-
-							<manifest>
-								<entry>
-									<key>JVM-Args</key>
-									<value>-Xmx512m</value>
-								</entry>
-								<entry>
-									<key>Repositories</key>
-									<value>local central</value>
-								</entry>
-								<!--<entry>-->
-									<!--<key>Main-Class</key>-->
-									<!--<value>MyCapsule</value>-->
-								<!--</entry>-->
-							</manifest>
-
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
