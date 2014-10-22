@@ -4,7 +4,7 @@
 
 	<groupId>com.github.chrischristo</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>0.9.0</version>
+	<version>0.9.1</version>
 	<packaging>jar</packaging>
 
 	<developers>
@@ -28,7 +28,7 @@
 		<maven.exec.plugin.version>1.3.2</maven.exec.plugin.version>
 		<!-- Specify a custom capsule version (Will use latest if unspecified) -->
 		<capsule.version>0.9.0</capsule.version>
-		<capsule.maven.plugin.version>0.9.0</capsule.maven.plugin.version>
+		<capsule.maven.plugin.version>0.9.1</capsule.maven.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -120,10 +120,40 @@
 							<value>local central</value>
 						</entry>
 						<!--<entry>-->
-						<!--<key>Main-Class</key>-->
-						<!--<value>MyCapsule</value>-->
+							<!--<key>Main-Class</key>-->
+							<!--<value>MyCapsule</value>-->
 						<!--</entry>-->
 					</manifest>
+
+					<!-- EXAMPLE OF HOW TO USE MODES -->
+					<!--<modes>-->
+						<!--<mode>-->
+							<!--<name>mode_prod</name>-->
+							<!--<properties>-->
+								<!--<property>-->
+									<!--<key>propertyName1</key>-->
+									<!--<value>propertyValue2</value>-->
+								<!--</property>-->
+							<!--</properties>-->
+							<!--<manifest>-->
+								<!--<entry>-->
+									<!--<key>JVM-Args</key>-->
+									<!--<value>-Xmx1024m</value>-->
+								<!--</entry>-->
+							<!--</manifest>-->
+						<!--</mode>-->
+					<!--</modes>-->
+
+					<!-- EXAMPLE OF HOW TO USE FILESETS -->
+					<!--<fileSets>-->
+						<!--<fileSet>-->
+							<!--<directory>config/</directory>-->
+							<!--<outputDirectory>config/</outputDirectory>-->
+							<!--<includes>-->
+								<!--<include>myconfig.yml</include>-->
+							<!--</includes>-->
+						<!--</fileSet>-->
+					<!--</fileSets>-->
 
 				</configuration>
 				<!-- BUILD CAPSULES AUTOMATICALLY AT PACKAGE PHASE -->
