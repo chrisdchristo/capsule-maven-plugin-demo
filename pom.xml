@@ -159,7 +159,6 @@
 				<!-- BUILD CAPSULES AUTOMATICALLY AT PACKAGE PHASE -->
 				<executions>
 					<execution>
-						<phase>package</phase>
 						<goals>
 							<goal>build</goal>
 						</goals>
