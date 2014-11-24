@@ -5,9 +5,13 @@ import java.nio.file.Path;
  */
 public class MyCapsule extends Capsule {
 
-	public MyCapsule(Path jarFile, Path cacheDir) {
+	protected MyCapsule(Path jarFile, Path cacheDir) {
 		super(jarFile, cacheDir);
-		System.out.println("My Custom Capsule class");
+		System.out.println("My Custom Capsule class (normal)");
+	}
+	protected MyCapsule(Capsule pred) {
+		super(pred);
+		System.out.println("My Custom Capsule class (pred)");
 	}
 
 }
