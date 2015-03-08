@@ -4,7 +4,7 @@
 
 	<groupId>com.github.chrischristo</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>0.10.1</version>
+	<version>0.10.3</version>
 	<packaging>jar</packaging>
 
 	<developers>
@@ -28,7 +28,7 @@
 		<maven.exec.plugin.version>1.3.2</maven.exec.plugin.version>
 		<!-- Specify a custom capsule version (Will use latest if unspecified) -->
 		<capsule.version>0.10.0</capsule.version>
-		<capsule.maven.plugin.version>0.10.1</capsule.maven.plugin.version>
+		<capsule.maven.plugin.version>0.10.3</capsule.maven.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -65,7 +65,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>boom</finalName>
+		<!--<finalName>custom-name</finalName>-->
 		<plugins>
 
 			<!-- EXEC PLUGIN EXAMPLE -->
