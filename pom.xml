@@ -4,7 +4,7 @@
 
 	<groupId>com.github.chrischristo</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<packaging>jar</packaging>
 
 	<developers>
@@ -28,12 +28,12 @@
 		<maven.exec.plugin.version>1.3.2</maven.exec.plugin.version>
 		<!-- Specify a custom capsule version (Will use latest if unspecified) -->
 		<capsule.version>1.0.1</capsule.version>
-		<capsule.maven.plugin.version>1.0.1</capsule.maven.plugin.version>
+		<capsule.maven.plugin.version>1.0.2-SNAPSHOT</capsule.maven.plugin.version>
 	</properties>
 
 	<dependencies>
 
-		<!-- FOR THE CUSTOM CAPSULE CLASS (Don't need this if using the default Capsule.class) -->
+		<!-- FOR CAPLETS i.e THE CUSTOM CAPSULE CLASS (Don't need this if using the default Capsule.class) -->
 		<dependency>
 			<groupId>co.paralleluniverse</groupId>
 			<artifactId>capsule</artifactId>
@@ -107,7 +107,7 @@
 					<!--<output>target</output>-->
 					<chmod>true</chmod>
 					<trampoline>true</trampoline>
-					<transitive>false</transitive>
+					<!--<transitive>false</transitive>-->
 					<!--<types>thin fat</types>-->
 					<!--<execPluginConfig>root</execPluginConfig>-->
 					<caplets>MyCapsule MyCapsule2</caplets>
