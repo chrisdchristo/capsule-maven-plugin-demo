@@ -4,7 +4,7 @@
 
 	<groupId>com.github.chrischristo</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 	<packaging>jar</packaging>
 
 	<developers>
@@ -28,7 +28,7 @@
 		<maven.exec.plugin.version>1.3.2</maven.exec.plugin.version>
 		<!-- Specify a custom capsule version (Will use latest if unspecified) -->
 		<capsule.version>1.0.1</capsule.version>
-		<capsule.maven.plugin.version>1.0.4</capsule.maven.plugin.version>
+		<capsule.maven.plugin.version>1.0.5</capsule.maven.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -51,6 +51,7 @@
 					<artifactId>jsr305</artifactId>
 				</exclusion>
 			</exclusions>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- This dependency has transitive dependencies (use this to test transitive flag) -->
@@ -109,8 +110,8 @@
 					<trampoline>true</trampoline>
 					<!--<transitive>false</transitive>-->
 					<!--<optional>false</optional>-->
-					<resolve>false</resolve>
-					<!--<types>thin fat</types>-->
+					<!--<resolve>false</resolve>-->
+					<!--<types>fat</types>-->
 					<!--<execPluginConfig>root</execPluginConfig>-->
 					<caplets>MyCapsule MyCapsule2</caplets>
 					<!--<customDescriptorEmpty>-cap-empty</customDescriptorEmpty>-->
@@ -174,7 +175,7 @@
 						<!--<dependencySet>-->
 							<!--<groupId>com.google.guava</groupId>-->
 							<!--<artifactId>guava</artifactId>-->
-							<!--<version>optional</version>-->
+							<!--<version>17.0</version>-->
 							<!--<outputDirectory>config/</outputDirectory>-->
 							<!--<includes>-->
 								<!--<include>META-INF/MANIFEST.MF</include>-->
