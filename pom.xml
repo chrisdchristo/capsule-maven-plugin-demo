@@ -4,7 +4,7 @@
 
 	<groupId>com.github.chrischristo</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>1.1.1</version>
+	<version>1.1.2</version>
 	<packaging>jar</packaging>
 
 	<developers>
@@ -27,8 +27,9 @@
 		<maven.source.plugin.version>2.3</maven.source.plugin.version>
 		<maven.exec.plugin.version>1.3.2</maven.exec.plugin.version>
 		<!-- Specify a custom capsule version -->
-		<capsule.version>1.0.1</capsule.version>
-		<capsule.maven.plugin.version>1.1.1</capsule.maven.plugin.version>
+		<capsule.version>1.0.2</capsule.version>
+		<capsule.maven.version>1.0.2</capsule.maven.version>
+		<capsule.maven.plugin.version>1.1.2-SNAPSHOT</capsule.maven.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -140,17 +141,17 @@
 					<!-- OPTIONAL -->
 					<!--<outputDir>target</outputDir>-->
 					<caplets>MyCapsule MyCapsule2</caplets>
-					<chmod>true</chmod>
-					<trampoline>true</trampoline>
+					<!--<chmod>true</chmod>-->
+					<!--<trampoline>true</trampoline>-->
 					<includeApp>true</includeApp>
-					<includeTransitiveDep>false</includeTransitiveDep>
-					<includeCompileDep>false</includeCompileDep>
-					<!--<includeRuntimeDep>true</includeRuntimeDep>-->
+					<includeTransitiveDep>true</includeTransitiveDep>
+					<includeCompileDep>true</includeCompileDep>
+					<!--<includeRuntimeDep>false</includeRuntimeDep>-->
 					<!--<includeSystemDep>false</includeSystemDep>-->
 					<!--<includeOptionalDep>false</includeOptionalDep>-->
-					<!--<resolveApp>true</resolveApp>-->
-					<resolveTransitiveDep>true</resolveTransitiveDep>
-					<resolveCompileDep>true</resolveCompileDep>
+					<!--<resolveApp>false</resolveApp>-->
+					<!--<resolveTransitiveDep>false</resolveTransitiveDep>-->
+					<!--<resolveCompileDep>false</resolveCompileDep>-->
 					<!--<resolveRuntimeDep>false</resolveRuntimeDep>-->
 					<!--<resolveSystemDep>false</resolveSystemDep>-->
 					<!--<resolveOptionalDep>false</resolveOptionalDep>-->
@@ -170,10 +171,10 @@
 					</properties>
 
 					<manifest>
-						<entry>
-							<key>JVM-Args</key>
-							<value>-Xmx512m</value>
-						</entry>
+						<!--<entry>-->
+							<!--<key>JVM-Args</key>-->
+							<!--<value>-Xmx512m</value>-->
+						<!--</entry>-->
 						<entry>
 							<key>Repositories</key>
 							<value>local central</value>
@@ -181,47 +182,47 @@
 					</manifest>
 
 					<!-- EXAMPLE OF HOW TO USE MODES -->
-					<modes>
-						<mode>
-							<name>mode_prod</name>
-							<properties>
-								<property>
-									<key>propertyName1</key>
-									<value>propertyValue2</value>
-								</property>
-							</properties>
-							<manifest>
-								<entry>
-									<key>JVM-Args</key>
-									<value>-Xmx1024m</value>
-								</entry>
-							</manifest>
-						</mode>
-					</modes>
+					<!--<modes>-->
+						<!--<mode>-->
+							<!--<name>mode_prod</name>-->
+							<!--<properties>-->
+								<!--<property>-->
+									<!--<key>propertyName1</key>-->
+									<!--<value>propertyValue2</value>-->
+								<!--</property>-->
+							<!--</properties>-->
+							<!--<manifest>-->
+								<!--<entry>-->
+									<!--<key>JVM-Args</key>-->
+									<!--<value>-Xmx1024m</value>-->
+								<!--</entry>-->
+							<!--</manifest>-->
+						<!--</mode>-->
+					<!--</modes>-->
 
 					<!-- EXAMPLE OF HOW TO USE FILESETS -->
-					<fileSets>
-						<fileSet>
-							<directory>conf/</directory>
-							<outputDirectory>config/</outputDirectory>
-							<includes>
-								<include>myconfig.yml</include>
-							</includes>
-						</fileSet>
-					</fileSets>
+					<!--<fileSets>-->
+						<!--<fileSet>-->
+							<!--<directory>conf/</directory>-->
+							<!--<outputDirectory>config/</outputDirectory>-->
+							<!--<includes>-->
+								<!--<include>myconfig.yml</include>-->
+							<!--</includes>-->
+						<!--</fileSet>-->
+					<!--</fileSets>-->
 
 					<!--EXAMPLE OF HOW TO USE DEPENDENCYSETS-->
-					<dependencySets>
-						<dependencySet>
-							<groupId>com.google.guava</groupId>
-							<artifactId>guava</artifactId>
-							<version>17.0</version>
-							<outputDirectory>config/</outputDirectory>
-							<includes>
-								<include>META-INF/MANIFEST.MF</include>
-							</includes>
-						</dependencySet>
-					</dependencySets>
+					<!--<dependencySets>-->
+						<!--<dependencySet>-->
+							<!--<groupId>com.google.guava</groupId>-->
+							<!--<artifactId>guava</artifactId>-->
+							<!--<version>17.0</version>-->
+							<!--<outputDirectory>config/</outputDirectory>-->
+							<!--<includes>-->
+								<!--<include>META-INF/MANIFEST.MF</include>-->
+							<!--</includes>-->
+						<!--</dependencySet>-->
+					<!--</dependencySets>-->
 
 				</configuration>
 				<!-- BUILD CAPSULES AUTOMATICALLY AT PACKAGE PHASE -->
