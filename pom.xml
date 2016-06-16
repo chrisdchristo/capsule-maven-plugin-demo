@@ -4,7 +4,7 @@
 
 	<groupId>com.github.chrischristo</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>1.1.2</version>
+	<version>1.2.0</version>
 	<packaging>jar</packaging>
 
 	<developers>
@@ -23,13 +23,13 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.7</java.version>
-		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
-		<maven.source.plugin.version>2.3</maven.source.plugin.version>
-		<maven.exec.plugin.version>1.3.2</maven.exec.plugin.version>
+		<maven.source.plugin.version>3.0.0</maven.source.plugin.version>
+		<maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
+		<maven.exec.plugin.version>1.5.0</maven.exec.plugin.version>
 		<!-- Specify a custom capsule version -->
 		<capsule.version>1.0.2</capsule.version>
-		<capsule.maven.version>1.0.2</capsule.maven.version>
-		<capsule.maven.plugin.version>1.1.2-SNAPSHOT</capsule.maven.plugin.version>
+		<capsule.maven.version>1.0.3</capsule.maven.version>
+		<capsule.maven.plugin.version>1.2.0</capsule.maven.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -49,59 +49,73 @@
 		</dependency>
 
 		<!-- COMPILE SCOPED DEPENDENCY EXAMPLE -->
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.6.2</version>
-			<scope>runtime</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.google.code.gson</groupId>-->
+			<!--<artifactId>gson</artifactId>-->
+			<!--<version>2.6.2</version>-->
+			<!--<scope>compile</scope>-->
+		<!--</dependency>-->
 
 		<!-- RUNTIME SCOPED DEPENDENCY EXAMPLE -->
-		<dependency>
-			<groupId>com.google.collections</groupId>
-			<artifactId>google-collections</artifactId>
-			<version>1.0</version>
-			<scope>runtime</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.google.collections</groupId>-->
+			<!--<artifactId>google-collections</artifactId>-->
+			<!--<version>1.0</version>-->
+			<!--<scope>runtime</scope>-->
+		<!--</dependency>-->
 
 		<!-- PROVIDED SCOPED DEPENDENCY EXAMPLE -->
-		<dependency>
-			<groupId>com.google.http-client</groupId>
-			<artifactId>google-http-client</artifactId>
-			<version>1.21.0</version>
-			<scope>provided</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.google.http-client</groupId>-->
+			<!--<artifactId>google-http-client</artifactId>-->
+			<!--<version>1.21.0</version>-->
+			<!--<scope>provided</scope>-->
+		<!--</dependency>-->
 
 		<!-- OPTIONAL DEPENDENCY EXAMPLE -->
-		<dependency>
-			<groupId>com.google.inject</groupId>
-			<artifactId>guice</artifactId>
-			<version>4.0</version>
-			<optional>true</optional>
-		</dependency>
+		<!--<dependency>-->
+		<!--<groupId>com.google.inject</groupId>-->
+		<!--<artifactId>guice</artifactId>-->
+		<!--<version>4.0</version>-->
+		<!--<optional>true</optional>-->
+		<!--</dependency>-->
 
 		<!-- DEPENDENCY WITH TRANSITIVE DEPENDENCIES EXAMPLE -->
-		<dependency>
-			<groupId>io.undertow</groupId>
-			<artifactId>undertow-core</artifactId>
-			<version>1.3.10.Final</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>io.undertow</groupId>-->
+			<!--<artifactId>undertow-core</artifactId>-->
+			<!--<version>1.3.10.Final</version>-->
+		<!--</dependency>-->
 
 		<!-- SYSTEM SCOPED DEPENDENCY -->
 		<!--<dependency>-->
-		<!--<groupId>com.google.protobuf</groupId>-->
-		<!--<artifactId>protobuf-java</artifactId>-->
-		<!--<version>3.0.0-beta-2</version>-->
-		<!--<scope>system</scope>-->
+			<!--<groupId>com.google.protobuf</groupId>-->
+			<!--<artifactId>protobuf-java</artifactId>-->
+			<!--<version>3.0.0-beta-2</version>-->
+			<!--<scope>system</scope>-->
+		<!--</dependency>-->
+
+		<!-- DEPENDENCY WITH EXCLUSION EXAMPLE -->
+		<!--<dependency>-->
+			<!--<groupId>org.apache.maven</groupId>-->
+			<!--<artifactId>maven-project</artifactId>-->
+			<!--<version>3.0-alpha-2</version>-->
+			<!--<scope>provided</scope>-->
+			<!--<exclusions>-->
+				<!--<exclusion>-->
+					<!--<groupId>org.apache.maven</groupId>-->
+					<!--<artifactId>maven-model</artifactId>-->
+				<!--</exclusion>-->
+			<!--</exclusions>-->
 		<!--</dependency>-->
 
 		<!-- TEST SCOPED DEPENDENCY -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>junit</groupId>-->
+			<!--<artifactId>junit</artifactId>-->
+			<!--<version>4.11</version>-->
+			<!--<scope>test</scope>-->
+		<!--</dependency>-->
 
 	</dependencies>
 
@@ -146,14 +160,18 @@
 					<includeApp>true</includeApp>
 					<includeTransitiveDep>true</includeTransitiveDep>
 					<includeCompileDep>true</includeCompileDep>
-					<!--<includeRuntimeDep>false</includeRuntimeDep>-->
+					<!--<includeRuntimeDep>true</includeRuntimeDep>-->
+					<!--<includeProvidedDep>true</includeProvidedDep>-->
 					<!--<includeSystemDep>false</includeSystemDep>-->
+					<!--<includeTestDep>true</includeTestDep>-->
 					<!--<includeOptionalDep>false</includeOptionalDep>-->
 					<!--<resolveApp>false</resolveApp>-->
-					<!--<resolveTransitiveDep>false</resolveTransitiveDep>-->
-					<!--<resolveCompileDep>false</resolveCompileDep>-->
+					<!--<resolveTransitiveDep>true</resolveTransitiveDep>-->
+					<!--<resolveCompileDep>true</resolveCompileDep>-->
 					<!--<resolveRuntimeDep>false</resolveRuntimeDep>-->
+					<!--<resolveProvidedDep>false</resolveProvidedDep>-->
 					<!--<resolveSystemDep>false</resolveSystemDep>-->
+					<!--<resolveTestDep>true</resolveTestDep>-->
 					<!--<resolveOptionalDep>false</resolveOptionalDep>-->
 
 					<execPluginConfig>root</execPluginConfig>
@@ -172,8 +190,8 @@
 
 					<manifest>
 						<!--<entry>-->
-							<!--<key>JVM-Args</key>-->
-							<!--<value>-Xmx512m</value>-->
+						<!--<key>JVM-Args</key>-->
+						<!--<value>-Xmx512m</value>-->
 						<!--</entry>-->
 						<entry>
 							<key>Repositories</key>
@@ -183,45 +201,45 @@
 
 					<!-- EXAMPLE OF HOW TO USE MODES -->
 					<!--<modes>-->
-						<!--<mode>-->
-							<!--<name>mode_prod</name>-->
-							<!--<properties>-->
-								<!--<property>-->
-									<!--<key>propertyName1</key>-->
-									<!--<value>propertyValue2</value>-->
-								<!--</property>-->
-							<!--</properties>-->
-							<!--<manifest>-->
-								<!--<entry>-->
-									<!--<key>JVM-Args</key>-->
-									<!--<value>-Xmx1024m</value>-->
-								<!--</entry>-->
-							<!--</manifest>-->
-						<!--</mode>-->
+					<!--<mode>-->
+					<!--<name>mode_prod</name>-->
+					<!--<properties>-->
+					<!--<property>-->
+					<!--<key>propertyName1</key>-->
+					<!--<value>propertyValue2</value>-->
+					<!--</property>-->
+					<!--</properties>-->
+					<!--<manifest>-->
+					<!--<entry>-->
+					<!--<key>JVM-Args</key>-->
+					<!--<value>-Xmx1024m</value>-->
+					<!--</entry>-->
+					<!--</manifest>-->
+					<!--</mode>-->
 					<!--</modes>-->
 
 					<!-- EXAMPLE OF HOW TO USE FILESETS -->
 					<!--<fileSets>-->
-						<!--<fileSet>-->
-							<!--<directory>conf/</directory>-->
-							<!--<outputDirectory>config/</outputDirectory>-->
-							<!--<includes>-->
-								<!--<include>myconfig.yml</include>-->
-							<!--</includes>-->
-						<!--</fileSet>-->
+					<!--<fileSet>-->
+					<!--<directory>conf/</directory>-->
+					<!--<outputDirectory>config/</outputDirectory>-->
+					<!--<includes>-->
+					<!--<include>myconfig.yml</include>-->
+					<!--</includes>-->
+					<!--</fileSet>-->
 					<!--</fileSets>-->
 
 					<!--EXAMPLE OF HOW TO USE DEPENDENCYSETS-->
 					<!--<dependencySets>-->
-						<!--<dependencySet>-->
-							<!--<groupId>com.google.guava</groupId>-->
-							<!--<artifactId>guava</artifactId>-->
-							<!--<version>17.0</version>-->
-							<!--<outputDirectory>config/</outputDirectory>-->
-							<!--<includes>-->
-								<!--<include>META-INF/MANIFEST.MF</include>-->
-							<!--</includes>-->
-						<!--</dependencySet>-->
+					<!--<dependencySet>-->
+					<!--<groupId>com.google.guava</groupId>-->
+					<!--<artifactId>guava</artifactId>-->
+					<!--<version>17.0</version>-->
+					<!--<outputDirectory>config/</outputDirectory>-->
+					<!--<includes>-->
+					<!--<include>META-INF/MANIFEST.MF</include>-->
+					<!--</includes>-->
+					<!--</dependencySet>-->
 					<!--</dependencySets>-->
 
 				</configuration>
