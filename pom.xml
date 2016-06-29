@@ -2,22 +2,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.github.chrischristo</groupId>
+	<groupId>sg.enixsoft</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>1.2.0</version>
+	<version>1.3.0</version>
 	<packaging>jar</packaging>
 
 	<developers>
 		<developer>
 			<name>Chris Christo</name>
-			<email>c.d.c@mail.com</email>
+			<organization>Enix</organization>
+			<organizationUrl>https://enixsoft.sg</organizationUrl>
+			<email>chris@enixsoft.sg</email>
 		</developer>
 	</developers>
 
 	<scm>
-		<url>https://github.com/chrischristo/capsule-maven-plugin-demo</url>
-		<connection>scm:git:https://github.com/chrischristo/capsule-maven-plugin-demo.git</connection>
-		<developerConnection>scm:git:https://github.com/chrischristo/capsule-maven-plugin-demo.git</developerConnection>
+		<url>https://github.com/enix/capsule-maven-plugin-demo</url>
+		<connection>scm:git:https://github.com/enix/capsule-maven-plugin-demo.git</connection>
+		<developerConnection>scm:git:https://github.com/enix/capsule-maven-plugin-demo.git</developerConnection>
 	</scm>
 
 	<properties>
@@ -29,7 +31,7 @@
 		<!-- Specify a custom capsule version -->
 		<capsule.version>1.0.2</capsule.version>
 		<capsule.maven.version>1.0.3</capsule.maven.version>
-		<capsule.maven.plugin.version>1.2.0</capsule.maven.plugin.version>
+		<capsule.maven.plugin.version>1.3.0</capsule.maven.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -144,7 +146,7 @@
 
 			<!-- BUILD CAPSULES EXAMPLE -->
 			<plugin>
-				<groupId>com.github.chrischristo</groupId>
+				<groupId>sg.enixsoft</groupId>
 				<artifactId>capsule-maven-plugin</artifactId>
 				<version>${capsule.maven.plugin.version}</version>
 				<configuration>
@@ -155,24 +157,25 @@
 					<!-- OPTIONAL -->
 					<!--<outputDir>target</outputDir>-->
 					<caplets>MyCapsule MyCapsule2</caplets>
+					<type>fat</type>
 					<!--<chmod>true</chmod>-->
 					<!--<trampoline>true</trampoline>-->
-					<includeApp>true</includeApp>
-					<includeTransitiveDep>true</includeTransitiveDep>
-					<includeCompileDep>true</includeCompileDep>
+					<!--<includeApp>true</includeApp>-->
+					<!--<includeTransitiveDep>true</includeTransitiveDep>-->
+					<!--<includeCompileDep>true</includeCompileDep>-->
 					<!--<includeRuntimeDep>true</includeRuntimeDep>-->
 					<!--<includeProvidedDep>true</includeProvidedDep>-->
-					<!--<includeSystemDep>false</includeSystemDep>-->
+					<!--<includeSystemDep>true</includeSystemDep>-->
 					<!--<includeTestDep>true</includeTestDep>-->
-					<!--<includeOptionalDep>false</includeOptionalDep>-->
-					<!--<resolveApp>false</resolveApp>-->
+					<!--<includeOptionalDep>true</includeOptionalDep>-->
+					<!--<resolveApp>true</resolveApp>-->
 					<!--<resolveTransitiveDep>true</resolveTransitiveDep>-->
 					<!--<resolveCompileDep>true</resolveCompileDep>-->
-					<!--<resolveRuntimeDep>false</resolveRuntimeDep>-->
-					<!--<resolveProvidedDep>false</resolveProvidedDep>-->
-					<!--<resolveSystemDep>false</resolveSystemDep>-->
+					<!--<resolveRuntimeDep>true</resolveRuntimeDep>-->
+					<!--<resolveProvidedDep>true</resolveProvidedDep>-->
+					<!--<resolveSystemDep>true</resolveSystemDep>-->
 					<!--<resolveTestDep>true</resolveTestDep>-->
-					<!--<resolveOptionalDep>false</resolveOptionalDep>-->
+					<!--<resolveOptionalDep>true</resolveOptionalDep>-->
 
 					<execPluginConfig>root</execPluginConfig>
 					<customDescriptor>-cap</customDescriptor>
