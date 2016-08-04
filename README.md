@@ -1,18 +1,17 @@
 Capsule Maven Plugin Demo
 =========================
 
-[![Version](http://img.shields.io/badge/version-1.2.0-blue.svg?style=flat)](https://github.com/chrischristo/capsule-maven-plugin-demo/releases)
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
 
-This a demo project of how you can use the [capsule-maven-plugin](https://github.com/chrischristo/capsule-maven-plugin).
+This a demo project of how you can use the [capsule-maven-plugin](https://github.com/enix/capsule-maven-plugin).
 
-See more at [capsule](https://github.com/puniverse/capsule) and [capsule-maven-plugin](https://github.com/chrischristo/capsule-maven-plugin).
+See more at [capsule](https://github.com/puniverse/capsule) and [capsule-maven-plugin](https://github.com/enix/capsule-maven-plugin).
 
 #### Building from source
 Clone the project and run a maven install:
 
 ```
-git clone https://github.com/chrischristo/capsule-maven-plugin-demo.git
+git clone https://github.com/enix/capsule-maven-plugin-demo.git
 cd capsule-maven-plugin-demo
 mvn clean install
 ```
