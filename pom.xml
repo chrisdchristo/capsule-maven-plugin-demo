@@ -55,7 +55,7 @@
 		<maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
 		<maven.exec.plugin.version>1.5.0</maven.exec.plugin.version>
 		<!-- Specify a custom capsule version -->
-		<capsule.version>1.0.2</capsule.version>
+		<capsule.version>1.0.3</capsule.version>
 		<capsule.maven.version>1.0.3</capsule.maven.version>
 		<capsule.maven.plugin.version>1.4.0-SNAPSHOT</capsule.maven.plugin.version>
 	</properties>
