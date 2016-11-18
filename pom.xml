@@ -3,7 +3,7 @@
 
 	<groupId>com.github.chrisdchristo</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>1.4.0-SNAPSHOT</version>
+	<version>1.4.2</version>
 	<packaging>jar</packaging>
 
 	<parent>
@@ -57,7 +57,7 @@
 		<!-- Specify a custom capsule version -->
 		<capsule.version>1.0.3</capsule.version>
 		<capsule.maven.version>1.0.3</capsule.maven.version>
-		<capsule.maven.plugin.version>1.4.0-SNAPSHOT</capsule.maven.plugin.version>
+		<capsule.maven.plugin.version>1.4.2-SNAPSHOT</capsule.maven.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -186,6 +186,7 @@
 					<type>fat</type>
 					<!--<chmod>true</chmod>-->
 					<!--<trampoline>true</trampoline>-->
+					<setManifestRepos>true</setManifestRepos>
 					<!--<includeApp>true</includeApp>-->
 					<!--<includeTransitiveDep>true</includeTransitiveDep>-->
 					<!--<includeCompileDep>true</includeCompileDep>-->
@@ -217,16 +218,16 @@
 						</property>
 					</properties>
 
-					<manifest>
+					<!--<manifest>-->
 						<!--<entry>-->
 						<!--<key>JVM-Args</key>-->
 						<!--<value>-Xmx512m</value>-->
 						<!--</entry>-->
-						<entry>
-							<key>Repositories</key>
-							<value>local central</value>
-						</entry>
-					</manifest>
+						<!--<entry>-->
+							<!--<key>Repositories</key>-->
+							<!--<value>local central</value>-->
+						<!--</entry>-->
+					<!--</manifest>-->
 
 					<!-- EXAMPLE OF HOW TO USE MODES -->
 					<!--<modes>-->
