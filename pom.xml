@@ -3,7 +3,7 @@
 
 	<groupId>com.github.chrisdchristo</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>1.4.3</version>
+	<version>1.5.0</version>
 	<packaging>jar</packaging>
 
 	<parent>
@@ -51,13 +51,13 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.7</java.version>
-		<maven.source.plugin.version>3.0.0</maven.source.plugin.version>
-		<maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
+		<maven.source.plugin.version>3.0.1</maven.source.plugin.version>
+		<maven.compiler.plugin.version>3.6.1</maven.compiler.plugin.version>
 		<maven.exec.plugin.version>1.5.0</maven.exec.plugin.version>
 		<!-- Specify a custom capsule version -->
 		<capsule.version>1.0.3</capsule.version>
 		<capsule.maven.version>1.0.3</capsule.maven.version>
-		<capsule.maven.plugin.version>1.4.3</capsule.maven.plugin.version>
+		<capsule.maven.plugin.version>1.5.0</capsule.maven.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -70,11 +70,11 @@
 		</dependency>
 
 		<!-- DEFAULT SCOPED (i.e COMPILE) DEPENDENCY EXAMPLE -->
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>17.0</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.google.guava</groupId>-->
+			<!--<artifactId>guava</artifactId>-->
+			<!--<version>17.0</version>-->
+		<!--</dependency>-->
 
 		<!-- COMPILE SCOPED DEPENDENCY EXAMPLE -->
 		<!--<dependency>-->
@@ -188,6 +188,8 @@
 					<!--<trampoline>true</trampoline>-->
 					<setManifestRepos>true</setManifestRepos>
 					<!--<includeApp>true</includeApp>-->
+					<!--<includeAppDep>true</includeAppDep>-->
+					<!--<includePluginDep>true</includePluginDep>-->
 					<!--<includeTransitiveDep>true</includeTransitiveDep>-->
 					<!--<includeCompileDep>true</includeCompileDep>-->
 					<!--<includeRuntimeDep>true</includeRuntimeDep>-->
@@ -196,6 +198,8 @@
 					<!--<includeTestDep>true</includeTestDep>-->
 					<!--<includeOptionalDep>true</includeOptionalDep>-->
 					<!--<resolveApp>true</resolveApp>-->
+					<!--<resolveAppDep>true</resolveAppDep>-->
+					<!--<resolvePluginDep>true</resolvePluginDep>-->
 					<!--<resolveTransitiveDep>true</resolveTransitiveDep>-->
 					<!--<resolveCompileDep>true</resolveCompileDep>-->
 					<!--<resolveRuntimeDep>true</resolveRuntimeDep>-->
@@ -205,7 +209,8 @@
 					<!--<resolveOptionalDep>true</resolveOptionalDep>-->
 
 					<execPluginConfig>root</execPluginConfig>
-					<customDescriptor>-cap</customDescriptor>
+					<!--<fileName>custom-name</fileName>-->
+					<!--<fileDesc>-cap</fileDesc>-->
 
 					<properties>
 						<property>
@@ -272,7 +277,16 @@
 					<!--</dependencySet>-->
 					<!--</dependencySets>-->
 
+
 				</configuration>
+				<!-- DEPENDENCY FROM PLUGIN -->
+				<dependencies>
+					<!--<dependency>-->
+						<!--<groupId>com.google.code.gson</groupId>-->
+						<!--<artifactId>gson</artifactId>-->
+						<!--<version>2.6.2</version>-->
+					<!--</dependency>-->
+				</dependencies>
 				<!-- BUILD CAPSULES AUTOMATICALLY AT PACKAGE PHASE -->
 				<executions>
 					<execution>

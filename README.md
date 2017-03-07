@@ -19,7 +19,7 @@ mvn clean install
 Then you can run the capsule:
 
 ```
-java -jar target/capsule-maven-plugin-demo-1.4.3-cap.jar
+java -jar target/capsule-maven-plugin-demo-1.5.0-cap.jar
 ```
 
 ## License
