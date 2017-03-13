@@ -1,9 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.chrisdchristo</groupId>
 	<artifactId>capsule-maven-plugin-demo</artifactId>
-	<version>1.5.0</version>
+	<version>1.5.1</version>
 	<packaging>jar</packaging>
 
 	<parent>
@@ -15,7 +16,7 @@
 	<developers>
 		<developer>
 			<id>chrisdchristo</id>
-      <url>https://github.com/chrisdchristo</url>
+			<url>https://github.com/chrisdchristo</url>
 		</developer>
 	</developers>
 
@@ -57,7 +58,7 @@
 		<!-- Specify a custom capsule version -->
 		<capsule.version>1.0.3</capsule.version>
 		<capsule.maven.version>1.0.3</capsule.maven.version>
-		<capsule.maven.plugin.version>1.5.0</capsule.maven.plugin.version>
+		<capsule.maven.plugin.version>1.5.1</capsule.maven.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -71,33 +72,33 @@
 
 		<!-- DEFAULT SCOPED (i.e COMPILE) DEPENDENCY EXAMPLE -->
 		<!--<dependency>-->
-			<!--<groupId>com.google.guava</groupId>-->
-			<!--<artifactId>guava</artifactId>-->
-			<!--<version>17.0</version>-->
+		<!--<groupId>com.google.guava</groupId>-->
+		<!--<artifactId>guava</artifactId>-->
+		<!--<version>17.0</version>-->
 		<!--</dependency>-->
 
 		<!-- COMPILE SCOPED DEPENDENCY EXAMPLE -->
 		<!--<dependency>-->
-			<!--<groupId>com.google.code.gson</groupId>-->
-			<!--<artifactId>gson</artifactId>-->
-			<!--<version>2.6.2</version>-->
-			<!--<scope>compile</scope>-->
+		<!--<groupId>com.google.code.gson</groupId>-->
+		<!--<artifactId>gson</artifactId>-->
+		<!--<version>2.6.2</version>-->
+		<!--<scope>compile</scope>-->
 		<!--</dependency>-->
 
 		<!-- RUNTIME SCOPED DEPENDENCY EXAMPLE -->
 		<!--<dependency>-->
-			<!--<groupId>com.google.collections</groupId>-->
-			<!--<artifactId>google-collections</artifactId>-->
-			<!--<version>1.0</version>-->
-			<!--<scope>runtime</scope>-->
+		<!--<groupId>com.google.collections</groupId>-->
+		<!--<artifactId>google-collections</artifactId>-->
+		<!--<version>1.0</version>-->
+		<!--<scope>runtime</scope>-->
 		<!--</dependency>-->
 
 		<!-- PROVIDED SCOPED DEPENDENCY EXAMPLE -->
 		<!--<dependency>-->
-			<!--<groupId>com.google.http-client</groupId>-->
-			<!--<artifactId>google-http-client</artifactId>-->
-			<!--<version>1.21.0</version>-->
-			<!--<scope>provided</scope>-->
+		<!--<groupId>com.google.http-client</groupId>-->
+		<!--<artifactId>google-http-client</artifactId>-->
+		<!--<version>1.21.0</version>-->
+		<!--<scope>provided</scope>-->
 		<!--</dependency>-->
 
 		<!-- OPTIONAL DEPENDENCY EXAMPLE -->
@@ -110,39 +111,39 @@
 
 		<!-- DEPENDENCY WITH TRANSITIVE DEPENDENCIES EXAMPLE -->
 		<!--<dependency>-->
-			<!--<groupId>io.undertow</groupId>-->
-			<!--<artifactId>undertow-core</artifactId>-->
-			<!--<version>1.3.10.Final</version>-->
+		<!--<groupId>io.undertow</groupId>-->
+		<!--<artifactId>undertow-core</artifactId>-->
+		<!--<version>1.3.10.Final</version>-->
 		<!--</dependency>-->
 
 		<!-- SYSTEM SCOPED DEPENDENCY -->
 		<!--<dependency>-->
-			<!--<groupId>com.google.protobuf</groupId>-->
-			<!--<artifactId>protobuf-java</artifactId>-->
-			<!--<version>3.0.0-beta-2</version>-->
-			<!--<scope>system</scope>-->
+		<!--<groupId>com.google.protobuf</groupId>-->
+		<!--<artifactId>protobuf-java</artifactId>-->
+		<!--<version>3.0.0-beta-2</version>-->
+		<!--<scope>system</scope>-->
 		<!--</dependency>-->
 
 		<!-- DEPENDENCY WITH EXCLUSION EXAMPLE -->
 		<!--<dependency>-->
-			<!--<groupId>org.apache.maven</groupId>-->
-			<!--<artifactId>maven-project</artifactId>-->
-			<!--<version>3.0-alpha-2</version>-->
-			<!--<scope>provided</scope>-->
-			<!--<exclusions>-->
-				<!--<exclusion>-->
-					<!--<groupId>org.apache.maven</groupId>-->
-					<!--<artifactId>maven-model</artifactId>-->
-				<!--</exclusion>-->
-			<!--</exclusions>-->
+		<!--<groupId>org.apache.maven</groupId>-->
+		<!--<artifactId>maven-project</artifactId>-->
+		<!--<version>3.0-alpha-2</version>-->
+		<!--<scope>provided</scope>-->
+		<!--<exclusions>-->
+		<!--<exclusion>-->
+		<!--<groupId>org.apache.maven</groupId>-->
+		<!--<artifactId>maven-model</artifactId>-->
+		<!--</exclusion>-->
+		<!--</exclusions>-->
 		<!--</dependency>-->
 
 		<!-- TEST SCOPED DEPENDENCY -->
 		<!--<dependency>-->
-			<!--<groupId>junit</groupId>-->
-			<!--<artifactId>junit</artifactId>-->
-			<!--<version>4.11</version>-->
-			<!--<scope>test</scope>-->
+		<!--<groupId>junit</groupId>-->
+		<!--<artifactId>junit</artifactId>-->
+		<!--<version>4.11</version>-->
+		<!--<scope>test</scope>-->
 		<!--</dependency>-->
 
 	</dependencies>
@@ -224,14 +225,14 @@
 					</properties>
 
 					<!--<manifest>-->
-						<!--<entry>-->
-						<!--<key>JVM-Args</key>-->
-						<!--<value>-Xmx512m</value>-->
-						<!--</entry>-->
-						<!--<entry>-->
-							<!--<key>Repositories</key>-->
-							<!--<value>local central</value>-->
-						<!--</entry>-->
+					<!--<entry>-->
+					<!--<key>JVM-Args</key>-->
+					<!--<value>-Xmx512m</value>-->
+					<!--</entry>-->
+					<!--<entry>-->
+					<!--<key>Repositories</key>-->
+					<!--<value>local central</value>-->
+					<!--</entry>-->
 					<!--</manifest>-->
 
 					<!-- EXAMPLE OF HOW TO USE MODES -->
@@ -259,7 +260,7 @@
 							<!--<directory>conf/</directory>-->
 							<!--<outputDirectory>config/</outputDirectory>-->
 							<!--<includes>-->
-								<!--<include>myconfig.yml</include>-->
+								<!--<include>*.txt</include>-->
 							<!--</includes>-->
 						<!--</fileSet>-->
 					<!--</fileSets>-->
@@ -272,21 +273,22 @@
 					<!--<version>17.0</version>-->
 					<!--<outputDirectory>config/</outputDirectory>-->
 					<!--<includes>-->
-					<!--<include>META-INF/MANIFEST.MF</include>-->
+					<!--<include>*MANIFEST.MF</include>-->
+					<!--<include>com/google/common/collect/Tr*$1.class</include>-->
 					<!--</includes>-->
 					<!--</dependencySet>-->
 					<!--</dependencySets>-->
 
 
 				</configuration>
-				<!-- DEPENDENCY FROM PLUGIN -->
-				<dependencies>
-					<!--<dependency>-->
-						<!--<groupId>com.google.code.gson</groupId>-->
-						<!--<artifactId>gson</artifactId>-->
-						<!--<version>2.6.2</version>-->
-					<!--</dependency>-->
-				</dependencies>
+				<!-- EXAMPLE DEPENDENCY FROM PLUGIN -->
+				<!--<dependencies>-->
+				<!--<dependency>-->
+				<!--<groupId>com.google.code.gson</groupId>-->
+				<!--<artifactId>gson</artifactId>-->
+				<!--<version>2.6.2</version>-->
+				<!--</dependency>-->
+				<!--</dependencies>-->
 				<!-- BUILD CAPSULES AUTOMATICALLY AT PACKAGE PHASE -->
 				<executions>
 					<execution>
